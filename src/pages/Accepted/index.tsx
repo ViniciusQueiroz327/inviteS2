@@ -44,10 +44,10 @@ const Accepted: React.FC = () => {
               required
             >
               <option value="">Selecione...</option>
-              <option value="opcao1">Casa</option>
-              <option value="opcao2">Cinema</option>
-              <option value="opcao3">Parque</option>
-              <option value="opcao4">Restaurante</option>
+              <option value="Casa">Casa</option>
+              <option value="Cinema">Cinema</option>
+              <option value="Parque">Parque</option>
+              <option value="Restaurante">Restaurante</option>
             </select>
           </div>
           <div>
