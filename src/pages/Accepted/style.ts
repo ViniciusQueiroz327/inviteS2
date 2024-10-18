@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const MainWrapper = styled.div`
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 `;

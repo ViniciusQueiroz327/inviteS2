@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Buttons } from './style'
+import { useLocation } from 'react-router-dom';
 
 const BackgroundMusic: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const initialVolume = 0.05;
+  const location = useLocation();
 
   const handlePlayMusic = () => {
     if (audioRef.current) {
@@ -35,8 +37,20 @@ const BackgroundMusic: React.FC = () => {
     };
   }, []);
 
+  let backgroundColor;
+  switch (location.pathname) {
+    case '/':
+      backgroundColor = '#e66cd9';
+      break;
+    case '/Accepted':
+      backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      break;
+    default:
+      backgroundColor = '#e66cd9';
+  }
+
   return (
-    <div style={{ backgroundColor: "#e66cd9" }}>
+    <div style={{ backgroundColor }}>
       <audio ref={audioRef} loop preload="auto">
         <source src="/audio/treasure.mp3" type="audio/mpeg" />
         Seu navegador não suporta o elemento de áudio.
